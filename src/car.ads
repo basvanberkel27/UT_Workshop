@@ -1,4 +1,4 @@
-with Diesel_Engine;
+with Engine_Interface;
 with Ada.Strings.Fixed;
 
 package Car is
@@ -11,7 +11,11 @@ package Car is
       CAR_COLOR_WHITE,
       CAR_COLOR_RED,
       CAR_COLOR_YELLOW);
-   
+
+   procedure Create
+     (C : in out Car_Type;
+      E :        Engine_Interface.Engine_Iwa);
+
    procedure Start 
      (C : in out Car_Type);
    
@@ -39,7 +43,7 @@ private
       record
          License_Plate : String(1..8) := "XX-nnn-X";
          Car_Color     : Car_Color_T;   
-         DieselEngine  : Diesel_Engine.Diesel_Engine_Type;
+         Engine        : Engine_Interface.Engine_Iwa;
       end record;
    
-end car;
+end Car;
