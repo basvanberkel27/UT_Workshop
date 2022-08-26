@@ -6,6 +6,7 @@ Implement the improvements you previously designed. These should include:
 	- an interface​
 	- dependency injection​
 The program can be build with the following command (from this folder): `gprbuild -p -P ut_workshop.gpr`.
+The build executables can be found in the bin folder after building.
 
 ## Next exercise
 To access the next exercise switch to the branch `exercise_4`. Use `git checkout BRANCH_NAME` to switch to a new branch.
