@@ -2,7 +2,7 @@
 This repository contains the workshop exercises of the Ada unit test training.
 
 ## Exercise 4
-Run the unit tests.
+Run the unit tests: `testfixture_car.exe`. 
 The program can be build with the following command (from this folder): `gprbuild -p -P ut_workshop.gpr`.
 The build executables can be found in the bin folder after building.
 
