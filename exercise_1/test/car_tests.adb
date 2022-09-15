@@ -12,10 +12,9 @@ with Car; use Car;
 package body Car_Tests is
 
    type Test is new AUnit.Test_Fixtures.Test_Fixture with null record;
-   
 
    procedure WhenStopped_ThenCarShouldNotBeRunning (Unused : in out Test) is
-      C : Car.Car_Type;
+      C : Car_Type;
    begin
       -- arrange
       
@@ -32,6 +31,8 @@ package body Car_Tests is
       null;
       -- write your own test here
    end YourTest;
+
+   -- bonus points if you can find the bug in Get_Colour
 
    package Caller is new AUnit.Test_Caller (Test);
 

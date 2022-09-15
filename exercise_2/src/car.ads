@@ -25,7 +25,7 @@ package Car is
 private
    type Car_Type is tagged record
       License_Plate : String(1..8) := "XX-nnn-X";
-      Car_Color     : Car_Color_T;   
+      Car_Color     : Car_Color_T;
       Engine        : Diesel_Engine;
       Is_Running    : Boolean := False; 
     end record;
