@@ -1,5 +1,5 @@
 with Ada.Strings.Fixed;
-with Diesel_Engines; use Diesel_Engines;
+with Engines; use Engines;
 
 package Car is
 
@@ -13,6 +13,8 @@ package Car is
       CAR_COLOR_WHITE,
       CAR_COLOR_RED,
       CAR_COLOR_YELLOW);
+
+   function Create (Engine : Any_Engine) return Car_Type;
 
    procedure Start (Self : in out Car_Type);
    procedure Stop (Self : in out Car_Type);
@@ -30,7 +32,7 @@ private
    type Car_Type is tagged record
       License_Plate : String(1..8) := "XX-nnn-X";
       Car_Color     : Car_Color_T;
-      Engine        : Diesel_Engine;
+      Engine        : Any_Engine;
       Is_Running    : Boolean := False; 
     end record;
    

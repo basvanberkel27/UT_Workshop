@@ -17,6 +17,19 @@ package body Car is
       return Self.Is_Running;
    end Is_Running;
 
+   procedure Drive_For (Self : in out Car_Type; Seconds : Positive) is
+      MilesPerSecond : constant Positive := 31; 
+   begin
+      if not Self.Is_Running then
+         raise Car_Not_Started_Exception;
+      end if;
+
+      for I in 0 .. MilesPerSecond*Seconds loop
+         Self.Engine.Add_One_Mile;
+      end loop;
+   end Drive_For;
+
+
    function Get_Colour (Self : Car_Type) return Car_Color_T is 
    begin
       return Self.Car_Color;   

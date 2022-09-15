@@ -2,7 +2,8 @@ with Ada.Strings.Fixed;
 with Diesel_Engines; use Diesel_Engines;
 
 package Car is
-
+   Car_Not_Started_Exception : exception;
+   
    type Car_Type is tagged private;
  
    type Car_Color_T is 
@@ -16,6 +17,8 @@ package Car is
    procedure Stop (Self : in out Car_Type);
    function Is_Running (Self : Car_Type) return Boolean;
    
+   procedure Drive_For (Self : in out Car_Type; Seconds : Positive);
+
    function Get_Colour (Self : Car_Type) return Car_Color_T;
    procedure Set_Car_Color (Self : in out Car_Type; Color : Car_Color_T);
    

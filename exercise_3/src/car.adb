@@ -1,5 +1,11 @@
 package body Car is
 
+   function Create (Engine : Any_Engine) return Car_Type is
+   begin
+      return (Engine => Engine, others => <>);
+   end Create;
+
+
    procedure Start (Self : in out Car_Type) is
    begin
       Self.Engine.Start;
@@ -28,6 +34,7 @@ package body Car is
          Self.Engine.Add_One_Mile;
       end loop;
    end Drive_For;
+
 
    function Get_Colour (Self : Car_Type) return Car_Color_T is 
    begin

@@ -28,5 +28,11 @@ begin
       & " car with license plate: " & Car.Get_License_Plate); 
    Car.Start;
    Put_Line ("The car is started and ready to drive.");
-   return;
+
+   Put_Line ("The car is takes for a trip of half an hour.");
+   Car.Drive_For (Seconds => 60 * 30);
+
+   Put_Line ("After the trip is over the car is stopped.");
+   Car.Stop;
+
 end;
