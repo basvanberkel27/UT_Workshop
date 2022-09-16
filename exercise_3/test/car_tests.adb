@@ -14,7 +14,8 @@ package body Car_Tests is
    type Test is new AUnit.Test_Fixtures.Test_Fixture with null record;
    
    procedure GivenRunningCar_WhenDrivingForAFewSeconds_ThenSomeDistanceShouldBeTravelled (Unused : in out Test) is
-      C : Car_Type := Create (new Engine_Mock);
+      Engine : aliased Engine_Mock;
+      C : Car_Type := Create (Engine'Access);
       Time_Driving_In_Seconds : constant Positive := 3;
    begin
       -- 
