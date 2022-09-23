@@ -13,8 +13,8 @@ with Engine_Mocks;         use Engine_Mocks;
 package body Car_Tests is
    type Test is new AUnit.Test_Fixtures.Test_Fixture with null record;
    
+   Engine : aliased Engine_Mock;
    procedure GivenRunningCar_WhenDrivingForAFewSeconds_ThenSomeDistanceShouldBeTravelled (Unused : in out Test) is
-      Engine : aliased Engine_Mock;
       C : Car_Type := Create (Engine'Access);
       Time_Driving_In_Seconds : constant Positive := 3;
    begin
