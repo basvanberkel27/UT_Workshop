@@ -9,6 +9,7 @@ with AUnit.Test_Caller;
 
 with Car;                  use Car;
 with Engine_Mocks;         use Engine_Mocks;
+with Equality_Assertions;  use Equality_Assertions;
 
 package body Car_Tests is
    type Test is new AUnit.Test_Fixtures.Test_Fixture with null record;
@@ -25,7 +26,8 @@ package body Car_Tests is
       C.Drive_For (Time_Driving_In_Seconds);
 
       -- assert
-      Assert (False , "replace with a real assert here using the engine mock.");
+      -- replace with a real assert here using the engine mock.
+      Assert_Equals (1.0, 2.0);
    end GivenRunningCar_WhenDrivingForAFewSeconds_ThenSomeDistanceShouldBeTravelled;
 
    package Caller is new AUnit.Test_Caller (Test);
